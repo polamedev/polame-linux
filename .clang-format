@@ -1,0 +1,61 @@
+# BasedOnStyle: Google
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+ColumnLimit: 100
+# SortIncludes: false
+BreakBeforeBraces: Stroustrup
+IndentCaseLabels: true
+InsertNewlineAtEOF: true
+
+MaxEmptyLinesToKeep: 1
+OverEmptyLines: 1
+
+# ReflowComments: false
+
+# OperandAlignment: AlignAfterOperator
+# BreakBeforeBinaryOperators: NonAssignment
+
+AlignConsecutiveAssignments:
+  Enabled: true
+  AcrossComments: true
+  AcrossEmptyLines: false
+  AlignCompound: true
+  PadOperators: true
+AlignConsecutiveBitFields:
+  Enabled: true
+  AcrossComments: true
+  AcrossEmptyLines: false
+AlignConsecutiveDeclarations:
+  Enabled: true
+  AcrossComments: true
+  AcrossEmptyLines: false
+  # AlignFunctionPointers: true
+AlignConsecutiveMacros:
+  Enabled: true
+  # AcrossComments: true
+  # AcrossEmptyLines: true
+AlignTrailingComments:
+  Kind: Always
+  # OverEmptyLines: 1
+
+# if not None, when using initialization for an array of structs aligns the fields into columns.
+AlignArrayOfStructures: Right
+
+# Где расположена * в указателях?
+# PointerAlignment: Right
+SpaceAroundPointerQualifiers: Both
+
+QualifierAlignment: Left
+
+
+KeepEmptyLines: 
+  AtEndOfFile: true
+
+# Скобки у коротких inline функций
+AllowShortFunctionsOnASingleLine: InlineOnly
+
+# enum в каждой отдельной строке
+AllowShortEnumsOnASingleLine: false
+
+PackConstructorInitializers: NextLine
