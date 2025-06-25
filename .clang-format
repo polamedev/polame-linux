@@ -2,7 +2,9 @@
 IndentWidth: 4
 TabWidth: 4
 UseTab: Never
+# ColumnLimit: 120
 ColumnLimit: 0
+
 # SortIncludes: false
 IndentCaseLabels: true
 InsertNewlineAtEOF: true
@@ -64,5 +66,5 @@ AllowShortFunctionsOnASingleLine: InlineOnly
 # enum в каждой отдельной строке
 AllowShortEnumsOnASingleLine: false
 
-# Список инициализацторов по возможности в одной строке
+# Список инициализаторов по возможности в одной строке
 PackConstructorInitializers: NextLine
