@@ -106,5 +106,5 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source /home/paul/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Add $PATH with user script ~/nupola-configure.sh
-source ~/nupola-configure.sh
+# Add $PATH with user script ~/polame-configure.sh
+source ~/polame-configure.sh

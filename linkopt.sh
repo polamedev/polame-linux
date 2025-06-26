@@ -1,5 +1,5 @@
 # Скрипт для создания символьных ссылок на файл из текущей дирректории в /opt/bin
-# Пример ~/nupola-linux/linkopt.sh (-f) riscv-none-elf-gcc
+# Пример ~/polame-linux/linkopt.sh (-f) riscv-none-elf-gcc
 # -f - флаг для перезаписи ссылок
 force_flag="-f"
 
