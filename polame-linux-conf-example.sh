@@ -16,6 +16,10 @@ pathadd "/mnt/c/Program Files/usbipd-win"
 pathadd "/mnt/s/Program/Microsoft\ VS\ Code/bin"
 pathadd "/mnt/s/Program/Microsoft VS Code/bin/"
 
+# Установка переменных окружения 
+
+export SVD_PATH=~/opt/svd/
+
 # Path from windows
 #
 # /mnt/c/Windows/system32
