@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Скрипт единственной конфигурации
-# Запуск: source ~/polame-linux/configure-once.sh  
+# Запуск: source ~/.polame-linux/configure-once.sh  
 # Требует sudo
 
 sudo apt update
@@ -15,14 +15,14 @@ mkdir -p ~/downloads
 mkdir -p ~/develop/c_cpp
 
 # Добавление прав на выполнение к скриптам
-chmod +x ~/polame-linux/scripts/pathecho
-chmod +x ~/polame-linux/scripts/linkopt
+chmod +x ~/.polame-linux/scripts/pathecho
+chmod +x ~/.polame-linux/scripts/linkopt
 
 # Создание символьной ссылки на .clang-format -f - force
-ln -f -s ~/polame-linux/etc/.clang-format ~/.clang-format
+ln -f -s ~/.polame-linux/etc/.clang-format ~/.clang-format
 
 # Копируем файл конфигурации в домашнюю директорию, туда будут добавляться все локальные пути
-cp ~/polame-linux/example/.polame-configure.sh ~/.polame-configure.sh 
+cp ~/.polame-linux/example/.polame-configure.sh ~/.polame-configure.sh 
 
 # Устанавливаем необходимые пакеты (ZSH, powerline и powerline шрифты)
 sudo apt install zsh powerline fonts-powerline
@@ -38,6 +38,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-
 git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
 # Создаем символьную ссылку на мой файл скрипта .zshrc он будет постоянно запускаться при запуске системы
-ln -f -s ~/polame-linux/.zshrc ~/.zshrc
+ln -f -s ~/.polame-linux/.zshrc ~/.zshrc
 
 source ~/.zshrc

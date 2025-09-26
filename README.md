@@ -5,11 +5,14 @@
 # Первая настройка
 
 Репозиторий необходимо склонирвоать в домашнюю директорию.
+```sh
+    git clone https://github.com/polamedev/polame-linux.git $HOME/.polame-linux
+```
 
 После чего запустить скрипт конфигурации 
 
 ```sh
-source ~/polame-linux/configure-once.sh
+source ~/.polame-linux/configure-once.sh
 ```
 
 Будет сделано:

@@ -9,7 +9,7 @@ pathadd() {
     fi
 }
 
-pathadd "$HOME/polame-linux/scripts"
+pathadd "$HOME/.polame-linux/scripts"
 pathadd "$HOME/opt/bin"
 pathadd "$HOME/local/bin"
 
