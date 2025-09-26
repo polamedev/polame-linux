@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Создание символьной ссылки в директорию ~/opt/bin
+# Пример linkopt [-f] riscv-none-elf-gcc
+# -f - флаг для перезаписи ссылок
+
+force_flag="-f"
+
+if [ "$1" = $force_flag ]
+
+then
+fullpath=`realpath $2`
+filename=`basename $2`
+ln -f -s $fullpath $HOME/opt/bin/$filename
+
+else
+fullpath=`realpath $1`
+filename=`basename $1`
+ln -s $fullpath $HOME/opt/bin/$filename
+
+fi

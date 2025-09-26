@@ -104,7 +104,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source /home/paul/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Add $PATH with user script ~/polame-configure.sh
-source ~/polame-configure.sh
+# Запускаем скрипт постоянной конфигурации независимый от zsh
+source ~/polame-linux/configure.sh
