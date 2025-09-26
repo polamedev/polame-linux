@@ -4,9 +4,10 @@
 
 # Первая настройка
 
-Репозиторий необходимо склонирвоать в домашнюю директорию.
+Репозиторий необходимо склонирвоать в домашнюю директорию. Используй ssh чтобы не авторизоваться в github
+
 ```sh
-    git clone https://github.com/polamedev/polame-linux.git $HOME/.polame-linux
+    git clone git@github.com:polamedev/polame-linux.git $HOME/.polame-linux
 ```
 
 После чего запустить скрипт конфигурации 
