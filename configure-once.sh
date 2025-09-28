@@ -8,10 +8,10 @@
 make_default_dir() {
     echo "-- Make defult dir"
     # Создание стандартных директорий
-    mkdir -p {~/local/bin,~/local/src,~/local/src,~/local/lib,~/local/include}
-    mkdir -p ~/opt/bin
-    mkdir -p ~/downloads
-    mkdir -p ~/develop/c_cpp
+    mkdir -p {$HOME/local/bin,$HOME/local/src,$HOME/local/src,$HOME/local/lib,$HOME/local/include}
+    mkdir -p $HOME/opt/bin
+    mkdir -p $HOME/downloads
+    mkdir -p $HOME/develop/c_cpp
 }
 
 # Функция по установки zsh, Oh My Zsh и плагинов к нему
@@ -31,7 +31,7 @@ install_zsh() {
     git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
     # Создаем символьную ссылку на мой файл скрипта .zshrc он будет постоянно запускаться при запуске системы
-    ln -f -s ~/.polame-linux/.zshrc ~/.zshrc
+    ln -f -s $HOME/.polame-linux/.zshrc $HOME/.zshrc
 }
 
 install_apt() {
@@ -50,17 +50,17 @@ main() {
     sudo apt update
 
     # Добавление прав на выполнение к скриптам
-    chmod +x ~/.polame-linux/scripts/pathecho
-    chmod +x ~/.polame-linux/scripts/linkopt
+    chmod +x $HOME/.polame-linux/scripts/pathecho
+    chmod +x $HOME/.polame-linux/scripts/linkopt
 
     # Создание стандартных каталогов 
     make_default_dir
 
     # Создание символьной ссылки на .clang-format -f - force
-    ln -f -s ~/.polame-linux/etc/.clang-format ~/.clang-format
+    ln -f -s $HOME/.polame-linux/etc/.clang-format $HOME/.clang-format
 
     # Копируем файл конфигурации в домашнюю директорию, туда будут добавляться все локальные пути
-    cp ~/.polame-linux/example/.polame-configure.sh ~/.polame-configure.sh 
+    cp $HOME/.polame-linux/example/.polame-configure.sh $HOME/.polame-configure.sh 
 
     # Установка zsh
     install_zsh
