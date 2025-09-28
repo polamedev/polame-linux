@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Скрипт единственной конфигурации
-# Запуск: source ~/.polame-linux/configure-once.sh  
+# Запуск: sh ~/.polame-linux/configure-once.sh  
 # Требует sudo
 
 sudo apt update
