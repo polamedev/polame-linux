@@ -59,6 +59,9 @@ main() {
     # Создание символьной ссылки на .clang-format -f - force
     ln -f -s $HOME/.polame-linux/etc/.clang-format $HOME/.clang-format
 
+    # Добавление глобального .gitignore
+    git config --global core.excludesFile $HOME/.polame-linux/etc/.gitignore 
+
     # Копируем файл конфигурации в домашнюю директорию, туда будут добавляться все локальные пути
     cp $HOME/.polame-linux/example/.polame-configure.sh $HOME/.polame-configure.sh 
 

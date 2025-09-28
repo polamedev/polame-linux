@@ -1,0 +1,7 @@
+# Глобальный gitignore
+# git config --global core.excludesFile '$HOME/.polame-linux/etc/.gitignore'
+
+
+/build/
+/_build/
+/.vscode/
