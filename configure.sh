@@ -15,3 +15,6 @@ pathadd "$HOME/local/bin"
 
 # Запускаем скрипт пользовательской конфигурации
 source ~/.polame-configure.sh
+
+# Убрать объявление функции
+unset -f pathadd
