@@ -4,40 +4,53 @@
 # Запуск: sh ~/.polame-linux/configure-once.sh  
 # Требует sudo
 
-sudo apt update
+# Функция настройки директорий по умолчанию
+make_default_dir() {
+    # Создание стандартных директорий
+    mkdir -p {~/local/bin,~/local/src,~/local/src,~/local/lib,~/local/include}
+    mkdir -p ~/opt/bin
+    mkdir -p ~/downloads
+    mkdir -p ~/develop/c_cpp
+}
 
-# Настройка необходимых символьных ссылок в системе
+# Функция по установки zsh, Oh My Zsh и плагинов к нему
+install_zsh() {
+    # Устанавливаем необходимые пакеты (ZSH, powerline и powerline шрифты)
+    sudo apt install zsh powerline fonts-powerline
 
-# Создание стандартных директорий
-mkdir -p {~/local/bin,~/local/src,~/local/src,~/local/lib,~/local/include}
-mkdir -p ~/opt/bin
-mkdir -p ~/downloads
-mkdir -p ~/develop/c_cpp
+    # Установка Oh My Zsh, второй вариант рабочий и он не останавливает скрипт как первый
+    # sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
-# Добавление прав на выполнение к скриптам
-chmod +x ~/.polame-linux/scripts/pathecho
-chmod +x ~/.polame-linux/scripts/linkopt
+    # Установка подсветки синтаксиса Oh My Zsh
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting --depth 1
 
-# Создание символьной ссылки на .clang-format -f - force
-ln -f -s ~/.polame-linux/etc/.clang-format ~/.clang-format
+    # Устанавливаем плагин автодополнения для zsh
+    git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
-# Копируем файл конфигурации в домашнюю директорию, туда будут добавляться все локальные пути
-cp ~/.polame-linux/example/.polame-configure.sh ~/.polame-configure.sh 
+    # Создаем символьную ссылку на мой файл скрипта .zshrc он будет постоянно запускаться при запуске системы
+    ln -f -s ~/.polame-linux/.zshrc ~/.zshrc
+}
 
-# Устанавливаем необходимые пакеты (ZSH, powerline и powerline шрифты)
-sudo apt install zsh powerline fonts-powerline
+main() {
+    sudo apt update
 
-# Установка Oh My Zsh, второй вариант рабочий и он не останавливает скрипт как первый
-# sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+    # Создание стандартных каталогов 
+    make_default_dir
 
-# Установка подсветки синтаксиса Oh My Zsh
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting --depth 1
+    # Установка zsh
+    install_zsh
 
-# Устанавливаем плагин автодополнения для zsh
-git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+    # Добавление прав на выполнение к скриптам
+    chmod +x ~/.polame-linux/scripts/pathecho
+    chmod +x ~/.polame-linux/scripts/linkopt
 
-# Создаем символьную ссылку на мой файл скрипта .zshrc он будет постоянно запускаться при запуске системы
-ln -f -s ~/.polame-linux/.zshrc ~/.zshrc
+    # Создание символьной ссылки на .clang-format -f - force
+    ln -f -s ~/.polame-linux/etc/.clang-format ~/.clang-format
 
-source ~/.zshrc
+    # Копируем файл конфигурации в домашнюю директорию, туда будут добавляться все локальные пути
+    cp ~/.polame-linux/example/.polame-configure.sh ~/.polame-configure.sh 
+}
+
+main
+
