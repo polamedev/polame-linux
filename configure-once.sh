@@ -6,6 +6,7 @@
 
 # Функция настройки директорий по умолчанию
 make_default_dir() {
+    echo "-- Make defult dir"
     # Создание стандартных директорий
     mkdir -p {~/local/bin,~/local/src,~/local/src,~/local/lib,~/local/include}
     mkdir -p ~/opt/bin
@@ -15,6 +16,7 @@ make_default_dir() {
 
 # Функция по установки zsh, Oh My Zsh и плагинов к нему
 install_zsh() {
+    echo "-- Install zsh"
     # Устанавливаем необходимые пакеты (ZSH, powerline и powerline шрифты)
     sudo apt install zsh powerline fonts-powerline
 
@@ -32,24 +34,38 @@ install_zsh() {
     ln -f -s ~/.polame-linux/.zshrc ~/.zshrc
 }
 
+install_apt() {
+    # Установка необходимых утилит
+    echo "-- Install apt"
+
+    # Установка компиляторов gcc|g++ и библиотеки libc6-dev
+    sudo apt install build-essential
+
+    sudo apt install cmake
+
+    sudo apt install ninja-build
+}
+
 main() {
     sudo apt update
-
-    # Создание стандартных каталогов 
-    make_default_dir
-
-    # Установка zsh
-    install_zsh
 
     # Добавление прав на выполнение к скриптам
     chmod +x ~/.polame-linux/scripts/pathecho
     chmod +x ~/.polame-linux/scripts/linkopt
+
+    # Создание стандартных каталогов 
+    make_default_dir
 
     # Создание символьной ссылки на .clang-format -f - force
     ln -f -s ~/.polame-linux/etc/.clang-format ~/.clang-format
 
     # Копируем файл конфигурации в домашнюю директорию, туда будут добавляться все локальные пути
     cp ~/.polame-linux/example/.polame-configure.sh ~/.polame-configure.sh 
+
+    # Установка zsh
+    install_zsh
+
+    install_apt
 }
 
 main
