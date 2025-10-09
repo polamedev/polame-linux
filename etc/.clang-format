@@ -68,3 +68,8 @@ AllowShortEnumsOnASingleLine: false
 
 # Список инициализаторов по возможности в одной строке
 PackConstructorInitializers: NextLine
+
+# Определить макросы, которые выступают в качестве namespace
+# нужно чтобы внутри {} пространства было правильное форматирование функций и переменных
+NamespaceMacros:
+  - TEST_GROUP
