@@ -107,4 +107,4 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Запускаем скрипт постоянной конфигурации независимый от zsh
-source ~/.polame-linux/configure.sh
+source $HOME/.polame-linux/configure.sh
